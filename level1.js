@@ -23,3 +23,23 @@ dog.getDogInfo = function () { return `${this.name} is a ${this.age} year old ${
 
 
 console.log(dog.getDogInfo())
+
+
+
+
+const getTotalDaysInMonths = (month, year) => {
+    const day31 = `31 days`;
+    const day30 = `30 days`;
+    const day29 = `29 days`;
+    const day28 = `28 days`;
+    const monthNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+    if ((year % 4 === 0) && (year % 100 !== 0) && (year % 400 === 0)) {
+        monthNum.map(el =>
+         
+     )
+        return `leap year`
+    }
+    else {
+        return `normal year`
+    }
+ }
