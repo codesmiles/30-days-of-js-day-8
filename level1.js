@@ -28,18 +28,41 @@ console.log(dog.getDogInfo())
 
 
 const getTotalDaysInMonths = (month, year) => {
-    const day31 = `31 days`;
-    const day30 = `30 days`;
-    const day29 = `29 days`;
-    const day28 = `28 days`;
-    const monthNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-    if ((year % 4 === 0) && (year % 100 !== 0) && (year % 400 === 0)) {
-        monthNum.map(el =>
+
+    if ((Math.round(year % 4) === 0) && (Math.round(year % 100) !== 0) && (Math.round(year % 400) === 0)) {
+        if (month === 9 || month === 4 || month === 6 || month === 11) {
+            return `30 days`;
+        } else if (month === 1 || month === 3 || month === 5 || month === 7 || month === 8 || month === 10 || month === 12) {
+            return `31 days`;
+        }
+        else if (month === 2) {
+            return `29 days`;
+        }
+        else {
+            return false;
+        }
          
-     )
-        return `leap year`
     }
     else {
-        return `normal year`
+        if (month === 9 || month === 4 || month === 6 || month === 11) {
+            return `30 days`;
+        } else if (month === 1 || month === 3 || month === 5 || month === 7 || month === 8 || month === 10 || month === 12) {
+            return `31 days`;
+        }
+        else if (month === 2) {
+            return `28 days`;
+        }
+        else {
+            return false;
+        }
     }
- }
+}
+
+console.log(getTotalDaysInMonths(2, 2020));
+
+
+function isLeap(year) {
+    return new Date(year, 1, 29).getDate === 29;
+}
+
+console.log(isLeap(2020))
