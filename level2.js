@@ -1,7 +1,6 @@
-// Find the person who has many skills in the users object.
-// if (users.keys) {
 
-// }
+
+// Find the person who has many skills in the users object.
 
 const users = {
   Alex: {
@@ -154,4 +153,5 @@ const getAllValues = () => {
 }
 
 // Use the countries object to print a country name, capital, populations and languages.
-
+// import countries from "../../countries.mjs";
+// console.log(countries)
