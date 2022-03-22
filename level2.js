@@ -1,5 +1,3 @@
-
-
 // Find the person who has many skills in the users object.
 
 const users = {
@@ -104,15 +102,33 @@ const findPersonWithHighestSkillSecond = () => {
   }
   return person;
 };
+console.log(findPersonWithHighestSkillSecond());
+
+// const findPerson3 = () => {
+//   const userkey = Object.values(users);
+//   // console.log(userkey)
+//   let len = 0;
+//   userkey.map((user) => {
+//     if (user.skills.length > len) {
+//       len = user.skills.length;
+//       return user;
+//     }
+//   })
+// };
+
+// console.log(findPerson3());
 
 // Count logged in users,count users having greater than equal to 50 points from the following object.
 
 const value = Object.values(users);
-for (let i = 0; i < value.length; i++) {
-  if (value[i].points >= 50 && value[i].isLoggedIn === true) {
-    console.log(value[i]);
+const countLoggedinUsers = () => {
+  for (let i = 0; i < value.length; i++) {
+    if (value[i].points >= 50 && value[i].isLoggedIn === true) {
+      return value[i];
+    }
   }
-}
+};
+// console.log(countLoggedinUsers())
 
 // Find people who are MERN stack developer from the users object
 
@@ -125,32 +141,35 @@ const MERNstackDeveloper = () => {
       users[userKeys[i]].skills.includes("React") &&
       users[userKeys[i]].skills.includes("Node")
     ) {
-      console.log(users[userKeys[i]]);
+      return users[userKeys[i]];
     }
   }
 };
 
+// console.log(MERNstackDeveloper());
+
 // Set your name in the users object without modifying the original users object
 users.mike = {
-    email: "mikeflows@alex.com",
-    skills: ["HTML", "CSS", "JavaScript"],
-    age: 29,
-    isLoggedIn: true,
-    points: 50,
-  
+  email: "mikeflows@alex.com",
+  skills: ["HTML", "CSS", "JavaScript"],
+  age: 29,
+  isLoggedIn: true,
+  points: 50,
 };
+
 // Get all keys or properties of users object
 const getAllKeys = () => {
   let userKeys = Object.keys(users);
-  console.log(userKeys);
-
+  return userKeys;
 };
+// console.log(getAllKeys());
 
 // Get all the values of users object
 const getAllValues = () => {
   let userValues = Object.values(users);
-  console.log(userValues);
-}
+  return userValues;
+};
+// console.log(getAllValues())
 
 // Use the countries object to print a country name, capital, populations and languages.
 // import countries from "../../countries.mjs";
